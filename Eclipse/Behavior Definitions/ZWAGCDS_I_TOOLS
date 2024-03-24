@@ -1,0 +1,16 @@
+managed implementation in class zbp_wagcds_i_tools unique;
+strict;
+
+define behavior for ZWAGCDS_I_TOOLS //alias <alias_name>
+persistent table zwagt_tools
+lock master
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create;
+  update;
+  delete;
+  field( readonly, numbering : managed ) Toolsid;
+
+  mapping for zwagt_tools corresponding;
+}

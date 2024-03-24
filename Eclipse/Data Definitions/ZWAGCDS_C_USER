@@ -1,0 +1,14 @@
+@EndUserText.label: 'Consume Usuário'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions: true
+define root view entity ZWAGCDS_C_USER
+    as projection on ZWAGCDS_I_USER
+{
+    key Userid,
+    Email,
+    Fullname,
+    Isnew,
+    Lastchangedat,
+    /* Associations */
+    _user_tool: redirected to composition child ZWAGCDS_C_USERTOOL
+}

@@ -1,0 +1,13 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Ferramenta', typeNamePlural: 'Ferramentas' }
+annotate view ZWAGCDS_C_TOOLS
+    with 
+{
+@UI.hidden: true
+    Toolsid;
+    @UI.lineItem: [{ position: 10, label : 'Ferramenta' }]
+    @EndUserText.label: 'Ferramenta'
+    Toolname;
+    @UI.lineItem: [{ position: 20, label : 'Última Modificação' }]
+    Lastchangedat;
+}

@@ -1,0 +1,10 @@
+@EndUserText.label: 'Consume Ferramenta'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions: true
+define root view entity ZWAGCDS_C_TOOLS 
+    as projection on ZWAGCDS_I_TOOLS
+{
+    key Toolsid,
+    Toolname,
+    Lastchangedat
+}

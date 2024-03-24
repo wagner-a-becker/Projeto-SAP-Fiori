@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Tools'
+define service ZWAGSD_C_TOOLS {
+  expose ZWAGCDS_C_TOOLS as BaseFerramenta;
+}

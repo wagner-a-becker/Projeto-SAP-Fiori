@@ -1,0 +1,10 @@
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Interface Ferramenta'
+define root view entity ZWAGCDS_I_TOOLS
+    as select from zwagt_tools
+{
+    key toolsid as Toolsid,
+    toolname as Toolname,
+    @Semantics.systemDateTime.localInstanceLastChangedAt: true
+    lastchangedat as Lastchangedat
+}

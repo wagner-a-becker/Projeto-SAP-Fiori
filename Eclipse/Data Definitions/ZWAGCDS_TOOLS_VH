@@ -1,0 +1,12 @@
+@AbapCatalog.sqlViewName: 'ZWAGTOOLSVH'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Value Help Ferramentas'
+define view ZWAGCDS_TOOLS_VH
+  as select from zwagt_tools
+{
+      @UI.hidden: true
+  key toolsid  as Toolsid,
+      toolname as Toolname
+}

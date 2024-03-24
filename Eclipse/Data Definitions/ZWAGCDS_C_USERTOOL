@@ -1,0 +1,16 @@
+@EndUserText.label: 'Consume Usuário e Ferramenta'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions: true
+define view entity ZWAGCDS_C_USERTOOL
+    as projection on ZWAGCDS_I_USERTOOL
+{
+    key Userid,
+    key Toolsid,
+    Toolname,
+    Knowledge,
+    Interest,
+    Training,
+    Lastchangedat,
+    /* Associations */
+    _user: redirected to parent ZWAGCDS_C_USER
+}

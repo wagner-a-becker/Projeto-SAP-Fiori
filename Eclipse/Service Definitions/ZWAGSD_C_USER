@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition Users'
+define service ZWAGSD_C_USER {
+  expose ZWAGCDS_C_USER     as BaseConhecimentoUser;
+  expose ZWAGCDS_C_USERTOOL as UserFerramentas;
+}

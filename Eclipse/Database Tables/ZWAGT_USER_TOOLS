@@ -1,0 +1,20 @@
+@EndUserText.label : 'Usuário e Ferramentas'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zwagt_user_tools {
+
+  key client    : abap.clnt not null;
+  @AbapCatalog.foreignKey.screenCheck : false
+  key userid    : xubname not null
+    with foreign key [0..*,1] zwagt_user
+      where userid = zwagt_user_tools.userid;
+  key toolsid   : sysuuid_x16 not null;
+  toolname      : char50;
+  knowledge     : ze_conhecimento;
+  interest      : ze_interesse;
+  training      : boolean;
+  lastchangedat : timestampl;
+
+}

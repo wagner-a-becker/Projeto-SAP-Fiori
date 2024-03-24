@@ -1,0 +1,34 @@
+managed implementation in class zbp_wagcds_i_user unique;
+strict;
+
+define behavior for ZWAGCDS_I_USER alias _users
+persistent table zwagt_user
+lock master
+authorization master ( instance )
+etag master lastchangedat
+{
+  // create;
+   update;
+  // delete;
+
+  action ( features : instance ) setInactive result [1] $self;
+  association _user_tool { create; }
+
+  mapping
+       for zwagt_user corresponding;
+    }
+
+  define behavior for ZWAGCDS_I_USERTOOL alias _user_tool
+  persistent table zwagt_user_tools
+  lock dependent by _user
+  authorization dependent by _user
+  etag master lastchangedat
+  {
+    update;
+    delete;
+    field ( readonly ) Userid;
+    association _user;
+
+    mapping
+         for zwagt_user_tools corresponding;
+      }

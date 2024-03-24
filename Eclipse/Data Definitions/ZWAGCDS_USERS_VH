@@ -1,0 +1,13 @@
+@AbapCatalog.sqlViewName: 'ZWAGUSERSVH'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Value Help Users'
+@Search.searchable: true
+define view ZWAGCDS_USERS_VH
+  as select from zwagt_user
+{
+  key userid as Userid,
+      @Search.defaultSearchElement: true
+      email  as Email
+}
